@@ -1,12 +1,20 @@
-import { motion } from 'framer-motion'
-import { Code, Facebook, Github, Linkedin } from 'lucide-react'
+import { motion } from 'framer-motion';
+import { Code, Facebook, Github, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/Obaidul1545', label: 'GitHub' },
-    { icon: Linkedin, href: 'www.linkedin.com/in/obaidul1545', label: 'LinkedIn' },
-    { icon: Facebook, href: 'https://www.facebook.com/obaidul491519', label: 'Facebook' }
-  ]
+    {
+      icon: Linkedin,
+      href: 'https://www.linkedin.com/in/obaidul1545',
+      label: 'LinkedIn',
+    },
+    {
+      icon: Facebook,
+      href: 'https://www.facebook.com/obaidul491519',
+      label: 'Facebook',
+    },
+  ];
 
   return (
     <motion.footer
@@ -18,10 +26,10 @@ const Footer = () => {
     >
       <div className="flex flex-col items-center justify-center gap-6 max-w-4xl mx-auto px-6">
         {/* Logo */}
-        <motion.div 
+        <motion.div
           className="flex items-center gap-2 text-white"
           whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          transition={{ type: 'spring', stiffness: 400, damping: 10 }}
         >
           <div className="flex h-8 w-8 items-center justify-center rounded bg-primary-blue text-white text-sm">
             <Code size={18} />
@@ -42,15 +50,18 @@ const Footer = () => {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
               aria-label={social.label}
-              target='_blank'
+              target="_blank"
             >
-              <social.icon size={20} className="text-text-muted group-hover:text-white transition-colors" />
+              <social.icon
+                size={20}
+                className="text-text-muted group-hover:text-white transition-colors"
+              />
             </motion.a>
           ))}
         </div>
 
         {/* Copyright */}
-        <motion.p 
+        <motion.p
           className="text-sm text-text-muted"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -61,26 +72,35 @@ const Footer = () => {
         </motion.p>
 
         {/* Links */}
-        <motion.div 
+        <motion.div
           className="flex gap-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <a className="text-sm text-text-muted hover:text-primary-blue transition-colors" href="#">
+          <a
+            className="text-sm text-text-muted hover:text-primary-blue transition-colors"
+            href="#"
+          >
             Privacy Policy
           </a>
-          <a className="text-sm text-text-muted hover:text-primary-blue transition-colors" href="#">
+          <a
+            className="text-sm text-text-muted hover:text-primary-blue transition-colors"
+            href="#"
+          >
             Terms of Service
           </a>
-          <a className="text-sm text-text-muted hover:text-primary-blue transition-colors" href="#">
+          <a
+            className="text-sm text-text-muted hover:text-primary-blue transition-colors"
+            href="#"
+          >
             Cookies
           </a>
         </motion.div>
       </div>
     </motion.footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
